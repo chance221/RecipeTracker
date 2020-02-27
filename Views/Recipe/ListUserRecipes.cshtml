@@ -1,0 +1,37 @@
+﻿@model RecipeTracker.Models.UserRecipesViewModel
+
+@{
+
+    ViewBag.Title = "List User Recipes";
+}
+
+<h2>List User Recipes for @Model.User.FullName</h2>
+
+<div>
+    @foreach (var item in Model.User.Recipes)
+    {
+        <h3>@item.Name</h3>
+        <div>@item.CuisineType</div>
+        if (!String.IsNullOrWhiteSpace(item.URL)) { <div> @item.URL</div>}
+        <div>@item.Rating</div>
+        <div>
+            <h3>Ingredients</h3>
+            <div>
+                @{foreach (var i in item.Ingrdients)
+                    { 
+                        <div><span>@i.Name</span><span>@i.Quantity</span></div>
+                    }
+                }
+            </div>
+        </div>
+        <div>
+            <h3>Directions</h3>
+            <div>
+                @foreach(var d in item.Directions)
+                {
+
+                }
+            </div>
+        </div>
+    }
+</div>

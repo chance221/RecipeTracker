@@ -191,6 +191,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Recipe.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserRecipesViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -321,7 +322,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -373,6 +373,8 @@
     <Content Include="Views\Ingredient\Details.cshtml" />
     <Content Include="Views\Ingredient\Edit.cshtml" />
     <Content Include="Views\Ingredient\Index.cshtml" />
+    <Content Include="Views\Recipe\ListUserRecipes.cshtml" />
+    <Content Include="Views\Recipe\ListAllUsers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,25 @@
+﻿@using RecipeTracker.Models;
+
+@model List<User>
+@{
+    ViewBag.Title = "ListAllUsers";
+    List<String> UserFullName = new List<string>();
+
+
+}
+@using (Html.BeginForm("GetAllRecipes", "Recipe", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Which user would you like to see the recipes for?</label>
+        <div>
+            <select class="form-control" id="FullName" name="FullName">
+                @foreach (var item in Model)
+                {
+                    <option value=@item.UserID>@item.FullName</option>
+                }
+            </select>
+        </div>
+        <input type="submit" value="See recipes" />
+    </div>
+}
+

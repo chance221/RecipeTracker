@@ -26,5 +26,7 @@ namespace RecipeTracker.Controllers
 
             return View();
         }
+
+        
     }
 }
