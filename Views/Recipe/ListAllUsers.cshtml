@@ -6,20 +6,39 @@
     List<String> UserFullName = new List<string>();
 
 
+
 }
-@using (Html.BeginForm("GetAllRecipes", "Recipe", FormMethod.Post))
+<script src="https://kit.fontawesome.com/51fc824e61.js" crossorigin="anonymous"></script>  @*Font awsome link*@
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Noto Sans KR', sans-serif;
+        color: darkslategrey;
+    }
+
+    label{
+        margin: 20px;
+    }
+
+    h1{
+        margin-top: 20px; 
+    }
+</style>
+
+<h1> Look at Users Recipes <i class="fas fa-drumstick-bite"></i></h1><br />
+@using (Html.BeginForm("GetAllRecipeData", "Recipe", FormMethod.Post))
 {
-    <div class="form-group">
+    <div class="form-check-inline">
         <label>Which user would you like to see the recipes for?</label>
         <div>
-            <select class="form-control" id="FullName" name="FullName">
+            <select class="form-control" id="userId1" name="userId1">
                 @foreach (var item in Model)
                 {
                     <option value=@item.UserID>@item.FullName</option>
                 }
             </select>
-        </div>
-        <input type="submit" value="See recipes" />
+        </div><br />
+        <input type="submit" value="See recipes" class="btn btn-outline-dark" />
     </div>
 }
 

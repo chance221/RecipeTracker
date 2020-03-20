@@ -19,7 +19,9 @@ namespace RecipeTracker.Controllers
         // GET: Recipe
         public ActionResult Index()
         {
-            return View(db.Recipes.ToList());
+            var users = db.Users.ToList();
+           
+            return View("ListAllUsers", users);
         }
 
         // GET: Recipe/Details/5
@@ -130,75 +132,72 @@ namespace RecipeTracker.Controllers
         public ActionResult ListAllUsers()
         {
             List<User> users = db.Users.ToList();
-            //List<UserRecipesViewModel> VmList = new List<UserRecipesViewModel>();
-            
-            //UserRecipesViewModel person = new UserRecipesViewModel();
-            //foreach(var user in users)
-            //{
-            //    person.UserFullName = user.FirstName + " " + user.LastName;
-            //    person.UserRecipes = user.Recipes.ToList();
-            //    VmList.Add(person);
-            //}
             
             return View(users);
-
         }
 
 
         public ActionResult ListUserRecipes(Guid userId)
         {
-            User user = db.Users.Find(userId);
-
-            _userRecipeData.User = user;
-
-            //find the user recipe ingredients and send them to the view model
-
-
-            //find the user recipe directions and send them to the view mode
-            _userRecipeData.RecipeIngredients = user.Recipes.ToList();
-            //after the user is found get all of their recipes
-            foreach (var item in db.Recipes)
-            {
-
-                if (userId == null)
-                {
-                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-                }
-            
+            var recipes = new List<Recipe>();
+          
                 try
                 {
-                    if(item.UserID == userId)
+                    
+                    if (userId == null)
                     {
-                        _userRecipeData.UserRecipes.Add(item);
+                        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
                     }
+                    
+                    User user = db.Users.Find(userId);
 
-                    if(_userRecipeData.UserRecipes.Count() == 0)
-                    {
-                        _userRecipeData.Message = "No Recipes Exist For This User";
-                    }
+                    
+                    recipes = db.Recipes.Where(r => r.UserID == userId).ToList();
+
                 }
-
                 catch
                 {
                     _userRecipeData.ErrorMessage = "Hmmmm something wwent wrong, couldn't locate that user.";
                     //have the option to reload the page? or redirect back to a different page
+                    
                 }
-
-            }
-
-            return View(_userRecipeData);
-
+                return View(recipes);
         }
 
-        public ActionResult GetAllRecipeData (Guid userId)
+            
+
+        
+        [HttpPost]
+        public ActionResult GetAllRecipeData(string userId1)
         {
+            // I need to get all of the recipes for a user
+            //I then need to get all of the directions for that recipe (as well as order them by the step number)
+            //I then need to get all of the ingredients for that recipe by recipe ID (I can sort out the recipes based on the recipeID in the view using razor syntax
+            Guid userId = Guid.Parse(userId1);
             ICollection<Direction> directions = new List<Direction>();
             ICollection<Ingredient> ingredients = new List<Ingredient>();
+            UserRecipesViewModel vm = new UserRecipesViewModel();
+            User user = db.Users.Where(u => u.UserID == userId).FirstOrDefault();
+            var ingredientsList = new List<Ingredient>();//this needs to be sorted and filtered in the view using razor syntax
+            var directionsList = new List<Direction>();//this needs to be sorted and filtered in the view using razor syntax
 
+            vm.User = user;
 
-            recipes = db.Recipes.Where(r => r.UserID == userId).ToList();
-            ingredients = db
-            return View()
+            var recipes = db.Recipes.Where(r => r.UserID == userId).ToList();
+            
+
+            foreach (Recipe recipe in recipes)
+            {
+                ingredientsList.AddRange(db.Ingredients.Where(i => i.RecipeID == recipe.RecipeID));
+                directionsList.AddRange(db.Directions.Where(d => d.RecipeID == recipe.RecipeID));
+            }
+            directionsList.OrderBy(d => d.StepNum);
+            
+            vm.User.Recipes = recipes;
+            vm.RecipeDirection = directionsList;
+            vm.RecipeIngredients = ingredientsList;
+
+            return View("ListUserRecipes", vm);
         }
     }
 }
