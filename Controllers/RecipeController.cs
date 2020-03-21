@@ -137,7 +137,7 @@ namespace RecipeTracker.Controllers
         }
 
 
-        public ActionResult ListUserRecipes(Guid userId)
+        public ActionResult ListUserRecipes(string userId)
         {
             var recipes = new List<Recipe>();
           
@@ -168,12 +168,12 @@ namespace RecipeTracker.Controllers
 
         
         [HttpPost]
-        public ActionResult GetAllRecipeData(string userId1)
+        public ActionResult GetAllRecipeData(string userId)
         {
             // I need to get all of the recipes for a user
             //I then need to get all of the directions for that recipe (as well as order them by the step number)
             //I then need to get all of the ingredients for that recipe by recipe ID (I can sort out the recipes based on the recipeID in the view using razor syntax
-            Guid userId = Guid.Parse(userId1);
+            
             ICollection<Direction> directions = new List<Direction>();
             ICollection<Ingredient> ingredients = new List<Ingredient>();
             UserRecipesViewModel vm = new UserRecipesViewModel();

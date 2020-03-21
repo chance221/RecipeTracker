@@ -15,7 +15,7 @@ namespace RecipeTracker.Models
         public Guid RecipeID { get; set; }
         public string Name { get; set; }
         public CuisineType CuisineType { get; set; }
-        public Guid UserID { get; set; }
+        public string UserID { get; set; }
         public string? URL { get; set; }
         
         public int Rating { get; set; }

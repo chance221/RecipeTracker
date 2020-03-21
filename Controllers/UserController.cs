@@ -21,7 +21,43 @@ namespace RecipeTracker.Controllers
             return View(db.Users.ToList());
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditDisplay([Bind(Include="UserId, LastName, FirstName, Email")] User user)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(user).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(user);
+        }
+
+        //Get : User/EditDisplay/5
+        public ActionResult EditDisplay(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            User user = db.Users.Find(id);
+            
+            if(user == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(user);
+        }
+
+
+
         // GET: User/Details/5
+
+            //replace the controller in this view to use EditDisplay Method
         public ActionResult Details(Guid? id)
         {
             if (id == null)
@@ -51,7 +87,7 @@ namespace RecipeTracker.Controllers
         {
             if (ModelState.IsValid)
             {
-                user.UserID = Guid.NewGuid();
+                user.UserID = Guid.NewGuid().ToString();
                 db.Users.Add(user);
                 db.SaveChanges();
                 return RedirectToAction("Index");

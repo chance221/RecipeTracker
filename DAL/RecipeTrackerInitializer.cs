@@ -15,7 +15,7 @@ namespace RecipeTracker.DAL
             {
                 new User
                 {
-                    UserID = Guid.Parse("4D4EA904-75A4-6C4A-0548-5B267EC86EF5"),
+                    UserID = "4D4EA904-75A4-6C4A-0548-5B267EC86EF5",
                     LastName = "Barton",
                     FirstName = "Logan",
                     Email = "laoreet@velit.org"
@@ -23,31 +23,31 @@ namespace RecipeTracker.DAL
                 },
                 new User
                 {
-                    UserID = Guid.Parse("876A5096-4F91-1ABD-B634-1E22A47D9DDC"),
+                    UserID = "876A5096-4F91-1ABD-B634-1E22A47D9DDC",
                     LastName = "Fisher",
                     FirstName = "Ferris",
                     Email = "magnis@convalliserat.net"
                 },
                 new User
                 {
-                    UserID = Guid.Parse("699B443B-F0F7-949B-4A6B-D9BDED390C0F"),
+                    UserID = "699B443B-F0F7-949B-4A6B-D9BDED390C0F",
                     LastName = "Brooks",
                     FirstName = "Phelan",
-                    Email = "consequat.dolor@dignissimtempor.com"
+                    Email = "consequatdolor@dignissimtempor.com"
                 },
                 new User
                 {
-                    UserID = Guid.Parse("5377F50C-7A21-C78E-0F28-22AE58BB0280"),
+                    UserID = "5377F50C-7A21-C78E-0F28-22AE58BB0280",
                     LastName = "Cain",
                     FirstName = "Vivian",
-                    Email = "eu.placerat@Nam.edu"
+                    Email = "euplacerat@Nam.edu"
                 },
                 new User
                 {
-                    UserID = Guid.Parse("7513E8A1-D959-E7D8-39BC-10FA98903959"),
+                    UserID = "7513E8A1-D959-E7D8-39BC-10FA98903959",
                     LastName = "Walter",
                     FirstName = "Mohammad",
-                    Email = "ultricies.adipiscing@ataugueid.com"
+                    Email = "ultriciesadipiscing@ataugueid.com"
                 }
 
                 #region COMMENTED USERS
@@ -728,7 +728,7 @@ namespace RecipeTracker.DAL
                 new Recipe{
                   RecipeID = Guid.Parse("9287E76B-56FA-3A7B-28BF-36BD49418C3B"),
                   Name = "scelerisque",
-                  UserID = Guid.Parse("4D4EA904-75A4-6C4A-0548-5B267EC86EF5"),
+                  UserID = "4D4EA904-75A4-6C4A-0548-5B267EC86EF5",
                   CuisineType = CuisineType.American,
                   URL = null,
                   Rating = 3
@@ -737,7 +737,7 @@ namespace RecipeTracker.DAL
                 new Recipe{
                   RecipeID = Guid.Parse("15BD9069-FB03-9FB5-43D5-E24BAD8C3A12"),
                   Name = "ligula",
-                  UserID = Guid.Parse("4D4EA904-75A4-6C4A-0548-5B267EC86EF5"),
+                  UserID = "4D4EA904-75A4-6C4A-0548-5B267EC86EF5",
                   CuisineType = CuisineType.Brazillian,
                   URL = null,
                   Rating = 4
@@ -746,7 +746,7 @@ namespace RecipeTracker.DAL
                 new Recipe{
                   RecipeID = Guid.Parse("679904C7-DB87-833C-9743-858767176FBF"),
                   Name = "Proin",
-                  UserID = Guid.Parse("4D4EA904-75A4-6C4A-0548-5B267EC86EF5"),
+                  UserID = "4D4EA904-75A4-6C4A-0548-5B267EC86EF5",
                   CuisineType = CuisineType.Cajun,
                   URL = null,
                   Rating = 5
@@ -755,7 +755,7 @@ namespace RecipeTracker.DAL
                 new Recipe{
                   RecipeID = Guid.Parse("E2AE9840-6BFA-ADE6-68A8-8333677F5A74"),
                   Name = "nunc",
-                  UserID = Guid.Parse("4D4EA904-75A4-6C4A-0548-5B267EC86EF5"),
+                  UserID = "4D4EA904-75A4-6C4A-0548-5B267EC86EF5",
                   CuisineType = CuisineType.Chinese,
                   URL = null,
                   Rating = 5
@@ -764,7 +764,7 @@ namespace RecipeTracker.DAL
                 new Recipe{
                   RecipeID = Guid.Parse("3C58F816-CB73-6293-98EC-B95A76226ECE"),
                   Name = "eget",
-                  UserID = Guid.Parse("4D4EA904-75A4-6C4A-0548-5B267EC86EF5"),
+                  UserID = "4D4EA904-75A4-6C4A-0548-5B267EC86EF5",
                   CuisineType = CuisineType.Cajun,
                   URL = null,
                   Rating = 3
@@ -773,7 +773,7 @@ namespace RecipeTracker.DAL
                 new Recipe{
                   RecipeID = Guid.Parse("6DCCCCE5-8486-E3F1-B8AD-1BB89D64632B"),
                   Name = "scelerisque",
-                  UserID = Guid.Parse("876A5096-4F91-1ABD-B634-1E22A47D9DDC"),
+                  UserID = "876A5096-4F91-1ABD-B634-1E22A47D9DDC",
                   CuisineType = CuisineType.American,
                   URL = null,
                   Rating = 3
@@ -782,7 +782,7 @@ namespace RecipeTracker.DAL
                 new Recipe{
                   RecipeID = Guid.Parse("85A19009-9DFC-A503-72E8-97B0A49C6C39"),
                   Name = "ligula",
-                  UserID = Guid.Parse("876A5096-4F91-1ABD-B634-1E22A47D9DDC"),
+                  UserID = "876A5096-4F91-1ABD-B634-1E22A47D9DDC",
                   CuisineType = CuisineType.Brazillian,
                   URL = null,
                   Rating = 4
@@ -791,7 +791,7 @@ namespace RecipeTracker.DAL
                 new Recipe{
                   RecipeID = Guid.Parse("B53207BE-A713-2840-00A1-F0C8E4614AD8"),
                   Name = "Proin",
-                  UserID = Guid.Parse("876A5096-4F91-1ABD-B634-1E22A47D9DDC"),
+                  UserID = "876A5096-4F91-1ABD-B634-1E22A47D9DDC",
                   CuisineType = CuisineType.Cajun,
                   URL = null,
                   Rating = 5
@@ -800,7 +800,7 @@ namespace RecipeTracker.DAL
                 new Recipe{
                   RecipeID = Guid.Parse("554EBFAA-7B6B-D39F-5651-55519759BFD5"),
                   Name = "nunc",
-                  UserID = Guid.Parse("876A5096-4F91-1ABD-B634-1E22A47D9DDC"),
+                  UserID = "876A5096-4F91-1ABD-B634-1E22A47D9DDC",
                   CuisineType = CuisineType.Chinese,
                   URL = null,
                   Rating = 5
@@ -809,7 +809,7 @@ namespace RecipeTracker.DAL
                 new Recipe{
                   RecipeID = Guid.Parse("EB59888D-2F31-72A1-070C-F9FC17B55AB4"),
                   Name = "eget",
-                  UserID = Guid.Parse("876A5096-4F91-1ABD-B634-1E22A47D9DDC"),
+                  UserID = "876A5096-4F91-1ABD-B634-1E22A47D9DDC",
                   CuisineType = CuisineType.Cajun,
                   URL = null,
                   Rating = 3
@@ -818,7 +818,7 @@ namespace RecipeTracker.DAL
                 new Recipe{
                   RecipeID = Guid.Parse("082540B5-5255-22C0-0018-A7021DA38DE0"),
                   Name = "scelerisque",
-                  UserID = Guid.Parse("699B443B-F0F7-949B-4A6B-D9BDED390C0F"),
+                  UserID = "699B443B-F0F7-949B-4A6B-D9BDED390C0F",
                   CuisineType = CuisineType.American,
                   URL = null,
                   Rating = 3
@@ -827,7 +827,7 @@ namespace RecipeTracker.DAL
                 new Recipe{
                   RecipeID = Guid.Parse("0D4AC180-27DC-83B9-B67E-585827BECBE6"),
                   Name = "ligula",
-                  UserID = Guid.Parse("699B443B-F0F7-949B-4A6B-D9BDED390C0F"),
+                  UserID = "699B443B-F0F7-949B-4A6B-D9BDED390C0F",
                   CuisineType = CuisineType.Brazillian,
                   URL = null,
                   Rating = 4
@@ -836,7 +836,7 @@ namespace RecipeTracker.DAL
                 new Recipe{
                   RecipeID = Guid.Parse("0BD3C73A-E3C2-E272-5155-423B29B28C31"),
                   Name = "Proin",
-                  UserID = Guid.Parse("699B443B-F0F7-949B-4A6B-D9BDED390C0F"),
+                  UserID = "699B443B-F0F7-949B-4A6B-D9BDED390C0F",
                   CuisineType = CuisineType.Cajun,
                   URL = null,
                   Rating = 5
@@ -845,7 +845,7 @@ namespace RecipeTracker.DAL
                 new Recipe{
                   RecipeID = Guid.Parse("E4A208EE-387A-4FFF-CE8C-86AE6B9B1084"),
                   Name = "nunc",
-                  UserID = Guid.Parse("699B443B-F0F7-949B-4A6B-D9BDED390C0F"),
+                  UserID = "699B443B-F0F7-949B-4A6B-D9BDED390C0F",
                   CuisineType = CuisineType.Chinese,
                   URL = null,
                   Rating = 5
@@ -854,7 +854,7 @@ namespace RecipeTracker.DAL
                 new Recipe{
                   RecipeID = Guid.Parse("7B70FE8D-F36F-52F8-803C-33EC79020D9D"),
                   Name = "eget",
-                  UserID = Guid.Parse("699B443B-F0F7-949B-4A6B-D9BDED390C0F"),
+                  UserID = "699B443B-F0F7-949B-4A6B-D9BDED390C0F",
                   CuisineType = CuisineType.Cajun,
                   URL = null,
                   Rating = 3
@@ -863,7 +863,7 @@ namespace RecipeTracker.DAL
                 new Recipe{
                   RecipeID = Guid.Parse("425968F2-C273-66D2-A5FB-1601FDB0E1CC"),
                   Name = "scelerisque",
-                  UserID = Guid.Parse("5377F50C-7A21-C78E-0F28-22AE58BB0280"),
+                  UserID = "5377F50C-7A21-C78E-0F28-22AE58BB0280",
                   CuisineType = CuisineType.American,
                   URL = null,
                   Rating = 3
@@ -872,7 +872,7 @@ namespace RecipeTracker.DAL
                 new Recipe{
                   RecipeID = Guid.Parse("7FCEAC4F-0511-2E7A-A5FC-5323596273F2"),
                   Name = "ligula",
-                  UserID = Guid.Parse("5377F50C-7A21-C78E-0F28-22AE58BB0280"),
+                  UserID = "5377F50C-7A21-C78E-0F28-22AE58BB0280",
                   CuisineType = CuisineType.Brazillian,
                   URL = null,
                   Rating = 4
@@ -881,7 +881,7 @@ namespace RecipeTracker.DAL
                 new Recipe{
                   RecipeID = Guid.Parse("E9454C46-42B4-E0C2-CFDE-AD3D7D3CD36D"),
                   Name = "Proin",
-                  UserID = Guid.Parse("5377F50C-7A21-C78E-0F28-22AE58BB0280"),
+                  UserID ="5377F50C-7A21-C78E-0F28-22AE58BB0280",
                   CuisineType = CuisineType.Cajun,
                   URL = null,
                   Rating = 5
@@ -890,7 +890,7 @@ namespace RecipeTracker.DAL
                 new Recipe{
                   RecipeID = Guid.Parse("5A919F4E-13BF-EA61-2791-72DBAFA0D984"),
                   Name = "nunc",
-                  UserID = Guid.Parse("5377F50C-7A21-C78E-0F28-22AE58BB0280"),
+                  UserID ="5377F50C-7A21-C78E-0F28-22AE58BB0280",
                   CuisineType = CuisineType.Chinese,
                   URL = null,
                   Rating = 5
@@ -899,7 +899,7 @@ namespace RecipeTracker.DAL
                 new Recipe{
                   RecipeID = Guid.Parse("C36D1109-AB0C-57BC-0DC2-64FF4A439A46"),
                   Name = "eget",
-                  UserID = Guid.Parse("5377F50C-7A21-C78E-0F28-22AE58BB0280"),
+                  UserID = "5377F50C-7A21-C78E-0F28-22AE58BB0280",
                   CuisineType = CuisineType.Cajun,
                   URL = null,
                   Rating = 3
@@ -908,7 +908,7 @@ namespace RecipeTracker.DAL
                 new Recipe{
                   RecipeID = Guid.Parse("CFD088A0-996E-5F71-DAFE-13982EE314CE"),
                   Name = "scelerisque",
-                  UserID = Guid.Parse("7513E8A1-D959-E7D8-39BC-10FA98903959"),
+                  UserID = "7513E8A1-D959-E7D8-39BC-10FA98903959",
                   CuisineType = CuisineType.American,
                   URL = null,
                   Rating = 3
@@ -917,7 +917,7 @@ namespace RecipeTracker.DAL
                 new Recipe{
                   RecipeID = Guid.Parse("21D3C686-C384-0450-8993-A7974817B60F"),
                   Name = "ligula",
-                  UserID = Guid.Parse("7513E8A1-D959-E7D8-39BC-10FA98903959"),
+                  UserID = "7513E8A1-D959-E7D8-39BC-10FA98903959",
                   CuisineType = CuisineType.Brazillian,
                   URL = null,
                   Rating = 4
@@ -926,7 +926,7 @@ namespace RecipeTracker.DAL
                 new Recipe{
                   RecipeID = Guid.Parse("C1234F92-A855-CD4D-64AA-BC867C87DD2B"),
                   Name = "Proin",
-                  UserID = Guid.Parse("7513E8A1-D959-E7D8-39BC-10FA98903959"),
+                  UserID = "7513E8A1-D959-E7D8-39BC-10FA98903959",
                   CuisineType = CuisineType.Cajun,
                   URL = null,
                   Rating = 5
@@ -935,7 +935,7 @@ namespace RecipeTracker.DAL
                 new Recipe{
                   RecipeID = Guid.Parse("971F4289-631A-F341-9FDB-90F48739FF36"),
                   Name = "nunc",
-                  UserID = Guid.Parse("7513E8A1-D959-E7D8-39BC-10FA98903959"),
+                  UserID = "7513E8A1-D959-E7D8-39BC-10FA98903959",
                   CuisineType = CuisineType.Chinese,
                   URL = null,
                   Rating = 5
@@ -944,7 +944,7 @@ namespace RecipeTracker.DAL
                 new Recipe{
                   RecipeID = Guid.Parse("958DBD4D-2945-8B36-269B-AB260FC59034"),
                   Name = "eget",
-                  UserID = Guid.Parse("7513E8A1-D959-E7D8-39BC-10FA98903959"),
+                  UserID = "7513E8A1-D959-E7D8-39BC-10FA98903959",
                   CuisineType = CuisineType.Cajun,
                   URL = null,
                   Rating = 3
@@ -2641,7 +2641,7 @@ namespace RecipeTracker.DAL
                 }
             };
             ingredients.ForEach(i => context.Ingredients.Add(i));
-
+            context.SaveChanges();
         }
     }
 }
