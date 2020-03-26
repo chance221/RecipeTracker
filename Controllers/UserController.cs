@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
 using RecipeTracker.DAL;
 using RecipeTracker.Models;
 
@@ -16,9 +17,59 @@ namespace RecipeTracker.Controllers
         private RecipeTrackerContext db = new RecipeTrackerContext();
 
         // GET: User
-        public ActionResult Index()
+        public ViewResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
-            return View(db.Users.ToList());
+            ViewBag.CurrentSort = sortOrder;
+            ViewBag.LastNameSortParams = String.IsNullOrEmpty(sortOrder) ? "last_name_desc" : "";
+            
+            if(searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = searchString;
+            try
+            {
+
+                var users = from u in db.Users
+                            select u;
+
+                if (!String.IsNullOrEmpty(searchString))
+                {
+                    users = users.Where(u => u.LastName.Contains(searchString)
+                        || u.FirstName.Contains(searchString));
+                }
+
+                switch (sortOrder)
+                {
+                    case "last_name_desc":
+                        users = users.OrderByDescending(u => u.LastName);
+                        break;
+
+                    default:
+                        users = users.OrderBy(u => u.LastName);
+                        break;
+                }
+
+                int pageSize = 3;
+                int pageNumber = (page ?? 1);// the ?? means if the value is present then use the current value, if page has no value assign 1 as its value)
+
+                return View(users.ToPagedList(pageNumber, pageSize));
+
+            }
+            catch
+            {
+
+                ViewBag.ErrorMessage = "We cannot locate the users at this time. please try again later. If problem persist please contact your Network Administrator";
+                return View("~Controllers/Home");
+                                       
+            }
+            
+
         }
 
         [HttpPost]

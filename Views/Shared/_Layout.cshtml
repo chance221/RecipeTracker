@@ -6,16 +6,40 @@
     <title>@ViewBag.Title - Recipe Tracker</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <style>
+        .nav-logo{
+            width: 15vw;
+            height: 10vw;
+            min-width: 150px;
+            min-height: 120px;
+            position:absolute;
+            z-index:10;
+            top:41px;
+        }
 
+        .navlistitems{
+            font-size:1.2em;
+        }
+
+        .reglinks{
+            float:right;
+            padding-left: 30vw;
+        }
+        .navlistitemcontainer{
+            padding-left:15vw;
+        }
+    </style>
 </head>
 <body><header>
+    <a class="navbar-brand logo" href="#"><img class="nav-logo" src="~/Content/Images/Logo.png" /></a>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <a class="navbar-brand" href="#">ReciTrak</a>
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
+        <div class="collapse navbar-collapse " id="collapsibleNavbar">
+            <div class="navlistitemcontainer"></div>
+            <ul class="navbar-nav navlistitems">
                 <li class="nav-item nav-link">
                     @Html.ActionLink("Home", "Index", "Home")
                 </li>
@@ -23,14 +47,17 @@
                     @Html.ActionLink("About", "About", "Home")
                 </li>
                 <li class="nav-item nav-link">
-                    @Html.ActionLink("Users Displayed", "Index", "User")
+                    @Html.ActionLink("Users", "Index", "User")
                 </li>
                 <li class="nav-item nav-link">
                     @Html.ActionLink("Recipes", "Index", "Recipe")
                 </li>
-                
+
             </ul>
-            @Html.Partial("_LoginPartial")
+            <div class="float-lg-right reglinks">
+                @Html.Partial("_LoginPartial")
+            </div>
+
         </div>
     </nav>
 </header>

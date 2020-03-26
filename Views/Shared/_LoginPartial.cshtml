@@ -1,6 +1,19 @@
 ﻿@using Microsoft.AspNet.Identity
 
 <script src="https://kit.fontawesome.com/51fc824e61.js" crossorigin="anonymous"></script> @*Font awsome link*@
+<style>
+    .regaction{
+        
+    }
+
+    .l{
+        padding-right: 25px;
+    }
+
+    .regicon{
+        padding-left: 5px
+    }
+</style>
 
 @if (Request.IsAuthenticated)
 {
@@ -19,7 +32,7 @@
 else
 {
     <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })<i class="fas fa-registered"></i></li>
-        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })<i class="fas fa-sign-in-alt"></i></li>
+        <li class="regaction l">@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })<i class="fas fa-registered regicon"></i></li>
+        <li class="regaction">@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })<i class="fas fa-sign-in-alt regicon"></i></li>
     </ul>
 }
