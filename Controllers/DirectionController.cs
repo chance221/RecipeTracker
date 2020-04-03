@@ -11,11 +11,13 @@ using RecipeTracker.Models;
 
 namespace RecipeTracker.Controllers
 {
+    [Authorize]
     public class DirectionController : Controller
     {
         private RecipeTrackerContext db = new RecipeTrackerContext();
 
         // GET: Direction
+        [AllowAnonymous]
         public ActionResult Index()
         {
             return View(db.Directions.ToList());
@@ -28,7 +30,11 @@ namespace RecipeTracker.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Direction direction = db.Directions.Find(id);
+            
+            var id1 = id.ToString();
+
+            Direction direction = db.Directions.Find(id1);
+            
             if (direction == null)
             {
                 return HttpNotFound();
@@ -47,7 +53,7 @@ namespace RecipeTracker.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "DirectionID,StepNum,Instruction,RecipeID")] Direction direction)
+        public ActionResult Create([Bind(Include = "StepNum,Instruction,RecipeID")] Direction direction)
         {
             if (ModelState.IsValid)
             {
@@ -67,7 +73,10 @@ namespace RecipeTracker.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+            var id1 = id.ToString();
+
             Direction direction = db.Directions.Find(id);
+            
             if (direction == null)
             {
                 return HttpNotFound();
@@ -98,7 +107,11 @@ namespace RecipeTracker.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
+            var id1 = id.ToString();
+
             Direction direction = db.Directions.Find(id);
+
             if (direction == null)
             {
                 return HttpNotFound();
@@ -111,7 +124,10 @@ namespace RecipeTracker.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(Guid id)
         {
-            Direction direction = db.Directions.Find(id);
+            var id1 = id.ToString();
+
+            Direction direction = db.Directions.Find(id1);
+            
             db.Directions.Remove(direction);
             db.SaveChanges();
             return RedirectToAction("Index");

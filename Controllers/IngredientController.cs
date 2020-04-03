@@ -11,11 +11,13 @@ using RecipeTracker.Models;
 
 namespace RecipeTracker.Controllers
 {
+    [Authorize]
     public class IngredientController : Controller
     {
         private RecipeTrackerContext db = new RecipeTrackerContext();
 
         // GET: Ingredient
+        [AllowAnonymous]
         public ActionResult Index()
         {
             return View(db.Ingredients.ToList());

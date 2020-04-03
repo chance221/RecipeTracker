@@ -2,7 +2,7 @@
 
 @model List<User>
 @{
-    ViewBag.Title = "ListAllUsers";
+    ViewBag.Title = "List All Users";
     List<String> UserFullName = new List<string>();
 
 
@@ -11,6 +11,7 @@
 <script src="https://kit.fontawesome.com/51fc824e61.js" crossorigin="anonymous"></script>  @*Font awsome link*@
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 <style>
+    /*the body has a different font to it from google fonts*/
     body {
         font-family: 'Noto Sans KR', sans-serif;
         color: darkslategrey;
@@ -28,17 +29,17 @@
 <h1> Look at Users Recipes <i class="fas fa-drumstick-bite"></i></h1><br />
 @using (Html.BeginForm("GetAllRecipeData", "Recipe", FormMethod.Post))
 {
-    <div class="form-check-inline">
+    <div class="form-check-inline"> @*Form check inline here*@
         <label>Which user would you like to see the recipes for?</label>
         <div>
-            <select class="form-control" id="userId1" name="userId1">
+            <select class="form-control" id="userId" name="userId">
                 @foreach (var item in Model)
                 {
                     <option value=@item.UserID>@item.FullName</option>
                 }
             </select>
         </div><br />
-        <input type="submit" value="See recipes" class="btn btn-outline-dark" />
+        <input type="submit" value="See recipes" class="btn btn-outline-dark btn-primary" />
     </div>
 }
 

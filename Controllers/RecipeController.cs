@@ -11,17 +11,19 @@ using RecipeTracker.Models;
 
 namespace RecipeTracker.Controllers
 {
+    [Authorize]
     public class RecipeController : Controller
     {
         private RecipeTrackerContext db = new RecipeTrackerContext();
         UserRecipesViewModel _userRecipeData = new UserRecipesViewModel();
 
         // GET: Recipe
+        [AllowAnonymous]
         public ActionResult Index()
         {
-            var users = db.Users.ToList();
+            var recipes = db.Recipes.ToList();
            
-            return View("ListAllUsers", users);
+            return View(recipes);
         }
 
         // GET: Recipe/Details/5
@@ -129,6 +131,14 @@ namespace RecipeTracker.Controllers
             base.Dispose(disposing);
         }
 
+        public ActionResult EditDisplay()
+        {
+            var users = db.Users.ToList();
+
+            return View("ListAllUsers", users);
+        }
+
+
         public ActionResult ListAllUsers()
         {
             List<User> users = db.Users.ToList();
@@ -136,7 +146,7 @@ namespace RecipeTracker.Controllers
             return View(users);
         }
 
-
+        //This is the custom view for EditDisplay
         public ActionResult ListUserRecipes(string userId)
         {
             var recipes = new List<Recipe>();
@@ -166,9 +176,9 @@ namespace RecipeTracker.Controllers
 
             
 
-        
+        //This is the post for the EditDisplay
         [HttpPost]
-        public ActionResult GetAllRecipeData(string userId)
+        public ActionResult GetAllRecipeData(string userId) 
         {
             // I need to get all of the recipes for a user
             //I then need to get all of the directions for that recipe (as well as order them by the step number)

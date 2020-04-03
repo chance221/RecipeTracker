@@ -12,11 +12,13 @@ using RecipeTracker.Models;
 
 namespace RecipeTracker.Controllers
 {
+    [Authorize]
     public class UserController : Controller
     {
         private RecipeTrackerContext db = new RecipeTrackerContext();
 
         // GET: User
+        [AllowAnonymous]
         public ViewResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
             ViewBag.CurrentSort = sortOrder;
@@ -134,7 +136,8 @@ namespace RecipeTracker.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = db.Users.Find(id);
+            var id1 = id.ToString();
+            User user = db.Users.Find(id1);
             if (user == null)
             {
                 return HttpNotFound();
@@ -183,7 +186,8 @@ namespace RecipeTracker.Controllers
 
             try
             {
-                User user = db.Users.Find(id);
+                var id1 = id.ToString();
+                User user = db.Users.Find(id1);
 
                 if (user == null)
                 {
