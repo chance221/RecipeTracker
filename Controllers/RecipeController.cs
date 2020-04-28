@@ -180,22 +180,21 @@ namespace RecipeTracker.Controllers
         [HttpPost]
         public ActionResult GetAllRecipeData(string userId) 
         {
-            // I need to get all of the recipes for a user
-            //I then need to get all of the directions for that recipe (as well as order them by the step number)
-            //I then need to get all of the ingredients for that recipe by recipe ID (I can sort out the recipes based on the recipeID in the view using razor syntax
-            
             ICollection<Direction> directions = new List<Direction>();
             ICollection<Ingredient> ingredients = new List<Ingredient>();
             UserRecipesViewModel vm = new UserRecipesViewModel();
             User user = db.Users.Where(u => u.UserID == userId).FirstOrDefault();
-            var ingredientsList = new List<Ingredient>();//this needs to be sorted and filtered in the view using razor syntax
-            var directionsList = new List<Direction>();//this needs to be sorted and filtered in the view using razor syntax
+            
+            var ingredientsList = new List<Ingredient>();
+            //this needs to be sorted and filtered in the view using razor syntax
+            
+            var directionsList = new List<Direction>();
+            //this needs to be sorted and filtered in the view using razor syntax
 
             vm.User = user;
 
             var recipes = db.Recipes.Where(r => r.UserID == userId).ToList();
             
-
             foreach (Recipe recipe in recipes)
             {
                 ingredientsList.AddRange(db.Ingredients.Where(i => i.RecipeID == recipe.RecipeID));

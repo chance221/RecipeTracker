@@ -9,7 +9,15 @@ namespace RecipeTracker.Models
 {
     public enum CuisineType
     {
-        African, American, Asian, Brazillian, British, Cajun, Chinese, Ethiopian, French, German, Grek, Indian, Italian, Jamaican, Japanese, Korean, Mediterranean, Mexican, MiddleEastern, Moroccan, Polish, Russian, SoulFood, Spanish, TexMex, Thai, Turkish, Vietnamese 
+        African, American, Asian, 
+        Brazillian, British, Cajun, 
+        Chinese, Ethiopian, French, 
+        German, Grek, Indian, Italian, 
+        Jamaican, Japanese, Korean, 
+        Mediterranean, Mexican, 
+        MiddleEastern, Moroccan, Polish, 
+        Russian, SoulFood, Spanish, 
+        TexMex, Thai, Turkish, Vietnamese 
     }
     public class Recipe
     {
